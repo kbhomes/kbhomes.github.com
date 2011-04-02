@@ -58,6 +58,7 @@ ul.menu li a
 {
 	padding: 0px 2em;
 	line-height: 45px;
+	text-decoration: none;
 
 	font-size: 14pt;
 	color: white;
@@ -66,7 +67,7 @@ ul.menu li a
 
 ul.menu li a:hover
 {
-
+	color: #c0c0c0;
 }
 
 div.content
@@ -88,4 +89,22 @@ div.right
 	float: right;
 	width: 430px;
 	padding-left: 20px;
+}
+
+div.right h1.title a { text-decoration: none; }
+div.right h1.title
+{
+	font-size: 1.3em;
+}
+
+div.right h2
+{
+	font-size: 1.2em;
+}
+
+div.right span.date
+{
+	font-style: italic;
+	font-size: 0.8em;
+	color: #404040;
 }

@@ -13,8 +13,9 @@ layout: default
 <p>There are unfortunately no posts to be heard of. That's likely due to the fact that I have very few interesting projects that are ready to go public. But stay tuned!</p>
 {% else %}
 {% assign post = site.posts[0] %}
+<h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+<span class="date">{{ post.date | date_to_string }}</span>
 {{ post.content }}
-<p>lolwut the heck</p>
 {% endif %}
 
 </div>
