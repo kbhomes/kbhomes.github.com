@@ -1,6 +1,91 @@
-body
+.site
 {
-	font: sans-serif;
+	font-family: sans-serif;
+	color: black;
+
+	margin: 0px auto;
+	padding: 0px;
+	height: 100%;
+	background-color: #FCFCFC;
+}
+
+div.header
+{
+	width: 100%;
+	height: 150px;
+	margin: 0px auto;
+	padding: 0px;
+
 	color: white;
-	background-color: #202030;
+	background-color: #101418;
+
+	position: relative;
+}
+
+div.logo
+{
+	line-height: 105px;
+	text-align: center;
+	font-size: 30pt;
+}
+
+div.menu
+{
+	background-color: #800000;
+	height: 45px;
+	width: 100%;
+
+	position: absolute;
+	bottom: 0px;
+}
+
+ul.menu
+{
+	list-style: none;
+	display: block;
+	background-color: #800000;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+
+ul.menu li
+{
+	display: inline;
+}
+
+ul.menu li a
+{
+	padding: 0px 2em;
+	line-height: 45px;
+
+	font-size: 14pt;
+	color: white;
+	background-color: #800000;
+}
+
+ul.menu li a:hover
+{
+
+}
+
+div.content
+{
+	/*margin: 10px 100px;*/
+	margin: 10px auto;
+	width: 950px;
+}
+
+div.left
+{
+	float: left;
+	width: 480px;
+	padding-right: 20px;
+}
+
+div.right
+{
+	float: right;
+	width: 430px;
+	padding-left: 20px;
 }

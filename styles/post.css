@@ -1,0 +1,11 @@
+h1.title
+{
+	margin-bottom: 0px;
+}
+
+span.date
+{
+	font-style: italic;
+	font-size: 0.8em;
+	color: #404040;
+}

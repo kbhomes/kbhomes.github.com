@@ -1,0 +1,20 @@
+---
+title: Home
+layout: default
+---
+
+<div class="left">
+{{ content }}
+</div>
+<div class="right">
+<h1>Latest post</h1>
+
+{% if site.posts == empty %}
+<p>There are unfortunately no posts to be heard of. That's likely due to the fact that I have very few interesting projects that are ready to go public. But stay tuned!</p>
+{% else %}
+{% assign post = site.posts[0] %}
+{{ post.content }}
+<p>lolwut the heck</p>
+{% endif %}
+
+</div>
