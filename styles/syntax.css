@@ -1,5 +1,15 @@
 .highlight .hll { background-color: #49483e }
-.highlighttable  { background: #272822; color: #f8f8f2; padding: 10px; border: 1px solid white; width: 100%; }
+.highlighttable  
+{ 
+	background: #272822; 
+	color: #f8f8f2; 
+	padding: 10px; 
+	border: 1px solid white; 
+	width: 100%; 
+	-moz-box-shadow: 0 0 10px 3px #DDD;
+	-webkit-box-shadow: 0 0 10px 3px #DDD;
+	box-shadow: 0 0 10px 3px #DDD;
+}
 .highlight  { padding-left: 10px; }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */

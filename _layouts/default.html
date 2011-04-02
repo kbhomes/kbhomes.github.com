@@ -2,14 +2,15 @@
 <html>
 	<head>
 		<title>KBHomes - {{ page.title }}</title>
-		<link rel="stylesheet" href="/styles/main.css" />
-		<link rel="stylesheet" href="/styles/post.css" />
-		<link rel="stylesheet" href="/styles/syntax.css" />
+		<link rel="stylesheet" href="/styles/main.css" type="text/css" />
+		<link rel="stylesheet" href="/styles/post.css" type="text/css" />
+		<link rel="stylesheet" href="/styles/syntax.css" type="text/css" />
+		<link rel="alternate"  href="/atom.xml" type="application/atom+xml" title="KBHomes's Atom feed" />
 	</head>
 	<body class="site">
 		<div class="header">
 			<div class="logo">
-			KBHomes
+			kbhomes
 			</div>
 			<div class="menu">
 				<ul class="menu">
@@ -22,6 +23,32 @@
 		</div>
 		<div class="content">
 			{{ content }}
+		</div>
+		<div class="footer">
+			<div class="feed_icon">
+				<a href="/atom.xml" title="Atom 1.0 feed"><img src="/images/feed.png" alt="Atom 1.0 feed icon"></img></a>
+			</div>
+			<div class="footer_inside">
+				<div class="footer_left">
+					<span class="footer_header">about</span>
+					<p>
+					You know, this is just fill-in text for the full-width footer that's seen on many different sites. It has become super popular recently, 
+					supposedly due to the fact that it is cool. I guess at this point I should make some note (a very tacky note) about the purpose of this
+					website and what I hope to post on it.
+					</p>
+				</div>
+				<div class="footer_right">
+					<span class="footer_header">contact</span>
+
+					<p>I'm social! Here's how you can reach me:</p>
+
+					<a href="https://github.com/kbhomes/">GitHub repositories</a><br/>
+					<a href="http://twitter.com/kbhomes">Twitter</a><br/>
+					<a href="mailto:kbhomes@this.isnt.real.com">Email</a><br/>
+
+					<p>&lt;3</p>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
