@@ -8,11 +8,11 @@ Welcome
 
 This is the homepage of KBHomes. Enjoy reading and stuff!
 
-{% highlight python %}
+{% highlight python linenos=table %}
 import website
 
 for i in range(visitors):
-	website.serve(i)
+    website.serve(i)
 
 pass
 {% endhighlight %}

@@ -1,5 +1,6 @@
 .highlight .hll { background-color: #49483e }
-.highlight  { background: #272822; color: #f8f8f2; padding: 10px 30px; border: 1px solid white; }
+.highlighttable  { background: #272822; color: #f8f8f2; padding: 10px; border: 1px solid white; width: 100%; }
+.highlight  { padding-left: 10px; }
 .highlight .c { color: #75715e } /* Comment */
 .highlight .err { color: #960050; background-color: #1e0010 } /* Error */
 .highlight .k { color: #66d9ef } /* Keyword */
@@ -58,3 +59,4 @@
 .highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
 .highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 .highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
+.linenos { color: #808890; }
