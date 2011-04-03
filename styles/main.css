@@ -172,3 +172,9 @@ span.footer_header
 {
 	clear: both;
 }
+
+span.secret
+{
+	color: #ccc;
+	font-style: italic;
+}
