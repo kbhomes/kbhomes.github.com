@@ -100,6 +100,7 @@ div.right h1.title a { text-decoration: none; }
 div.right h1.title
 {
 	font-size: 1.3em;
+	margin-bottom: 0px;
 }
 
 div.right h2

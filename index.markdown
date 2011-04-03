@@ -6,13 +6,14 @@ layout: home
 Welcome
 =======
 
-This is the homepage of KBHomes. Enjoy reading and stuff!
+If you're reading this page, that must mean that I'm *extremely popular*. Awesome. On this site, you'll find my personal
+blog where I'll post things I deem worthy of being posted, and details for all the projects I've decided to go public with.
 
 {% highlight python linenos=table %}
 import website
 
-for i in range(visitors):
-    website.serve(i)
+for v in visitors:
+    website.serve(v)
 
-pass
+print "Ballin'."
 {% endhighlight %}
