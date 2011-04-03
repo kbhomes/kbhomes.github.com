@@ -1,0 +1,26 @@
+table.posts
+{
+	border-spacing: 0;
+	width: 100%;
+}
+
+tr.post_row
+{
+	height: 35px;
+}
+
+td.post_date
+{
+	color: #666;
+	font-style: italic;
+	text-align: right;
+	width: 150px;
+
+	padding: 0px 20px 0px 0px;
+	border-right: 1px solid #aaa;
+}
+
+td.post_title
+{
+	padding: 0px 0px 0px 20px;
+}

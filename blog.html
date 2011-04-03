@@ -3,10 +3,18 @@ title: Blog
 layout: default
 ---
 
-<h1>Blog Posts</h1>
+<script type="text/javascript">addStylesheet("blog.css");</script>
 
-<ul class="posts">
-{% for post in site.posts %}
-	<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
+<h1>Blog Posts</h1>
+<p>Just the ramblings of a maniac.</p>
+
+<table class="posts">
+	<tbody class="posts_body">
+		{% for post in site.posts %}
+		<tr class="post_row">
+			<td class="post_date">{{ post.date | date_to_string }}</td>
+			<td class="post_title"><a href="{{ post.url }}">{{ post.title }}</a></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>

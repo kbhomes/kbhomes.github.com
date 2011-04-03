@@ -166,3 +166,8 @@ span.footer_header
 {
 	font-size: 1.5em;
 }
+
+.clear
+{
+	clear: both;
+}
