@@ -108,9 +108,15 @@ div.right h2
 	font-size: 1.2em;
 }
 
-div.right span.date
+span.date
 {
 	font-style: italic;
+	font-size: 0.8em;
+	color: #404040;
+}
+
+span.tag
+{
 	font-size: 0.8em;
 	color: #404040;
 }

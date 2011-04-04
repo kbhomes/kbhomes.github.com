@@ -2,3 +2,5 @@ auto: true
 server: true
 
 pygments: true
+
+url: "http://0.0.0.0:4000"
