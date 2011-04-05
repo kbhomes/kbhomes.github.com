@@ -3,5 +3,5 @@ server: true
 
 pygments: true
 
-#url: "http://kbhomes.github.com"
-url: "http://0.0.0.0:4000"
+url: "http://kbhomes.github.com"
+#url: "http://0.0.0.0:4000"
