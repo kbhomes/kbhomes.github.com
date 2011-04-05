@@ -27,8 +27,8 @@ A problem? Or a blessing!
 
 A problem. <span class="secret">High five to all the Archer fans out there.</span>
 
-Evidently the first step would be to capture a few USB sessions of this handshake, which was
-done on Windows using the wonderful [USB Monitor by HHD Software](http://www.hhdsoftware.com/usb-monitor).
+Evidently the first step would be to capture a few USB sessions of this handshake (which in my case occurred between the Windows Zune software and my Zune 8GB device), which was
+done using the wonderful [USB Monitor by HHD Software](http://www.hhdsoftware.com/usb-monitor).
 It's possible to tell when the Zune has completed its handshake when it displays 'connected' on its
 screen, so I stopped capturing as soon as I saw this to capture as few extra bytes as possible. This was
 repeated three times for a total of three outbound session captures (to the Zune) and three inbound 

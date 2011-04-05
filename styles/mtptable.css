@@ -1,0 +1,47 @@
+table.packet_table
+{
+	background: #272822; 
+	color: #f8f8f2; 
+	padding: 10px; 
+	border: 1px solid white; 
+	width: 100%;
+	-moz-box-shadow: 0 0 10px 3px #DDD;
+	-webkit-box-shadow: 0 0 10px 3px #DDD;
+	box-shadow: 0 0 10px 3px #DDD;
+	font-family: monospace;
+	overflow: auto;
+} 
+
+table.packet_table a
+{
+	text-decoration: underline;
+	color: #ccc;
+}
+
+thead
+{
+	font-weight: bold;
+}
+
+td.packet_length
+{
+	width: 50px;
+	text-align: left;
+	color: #C0C8E0;
+}
+
+td.packet_type
+{
+	color: #E0FFE0;
+}
+
+/* Overlay */
+#simplemodal-overlay {background-color:#000; cursor:wait;}
+
+/* Container */
+#simplemodal-container {}
+#simplemodal-container .hex_table
+{
+	padding: 8px;
+}
+#simplemodal-container a.modalCloseImg {background:url(/images/close.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-10px; right:-10px; cursor:pointer;}
