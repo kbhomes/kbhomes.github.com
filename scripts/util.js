@@ -68,7 +68,7 @@ function hexEncode(x,dir) {
 	}
 
 	return r;
-};
+}
 
 function padding(s,l) { return( l.substr(0, (l.length-s.length) )+s ); }
 
@@ -101,7 +101,7 @@ function hexTableEncode(x) {
 
 		if (i % 24 == 23) {
 			r += '</td>';
-			r += '<td class="hex_ascii">' + ascii + '</td>';
+			r += '<td class="hex_ascii">' + htmlEncode(ascii) + '</td>';
 			r += '</tr>';
 
 			doLast = false;
@@ -119,5 +119,9 @@ function hexTableEncode(x) {
 
 	r += '</tbody></table>';
 	return r;
-};
+}
+
+function htmlEncode(str) {
+	return str.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
+}
 
