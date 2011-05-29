@@ -67,7 +67,7 @@ the structure of each certificate, presented below. Some parts have been truncat
 -------------------------------------------------------------------------------------------------------------
 
 The second block, based on the first three bytes, are public/private key RSA information. The value
-`52 53 41 32` represents RSA2 in ASCII, marking that what follows is [private key information](http://msdn.microsoft.com/en-us/library/aa387401(v=vs.85\).aspx).
+`52 53 41 32` represents RSA2 in ASCII, marking that what follows is [private key information](http://msdn.microsoft.com/en-us/library/aa387401.aspx).
 As per that structure represented on the MSDN page, the private key information involves the bit length
 of the key, the public exponent, the modulus (n), the two primes (p and q), the two exponents, the 
 coefficient, and the private exponent (d). Curiously, the private exponent is not present in the 
