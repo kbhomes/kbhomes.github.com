@@ -6,7 +6,8 @@ tags: [zune, mtpz]
 
 <script type="text/javascript">addStylesheet("hextable.css");</script>
 
-It's been a fair amount of time since the last post on part 1 of the handshake, which dealt with generation of the Application Certificate Message (ACM for short). 
+It's been a fair amount of time since the [last post on part 1 of the handshake](http://kbhomes.github.com/2011/07/06/mtpz-handshake-part-1-application-certificate-message.html), 
+which dealt with generation of the Application Certificate Message (ACM for short). 
 This post will talk about the next part, which is validation of the device's response to our message.
 
 This message is, for the most part, encrypted and so at first glance is indecipherable.
@@ -20,11 +21,11 @@ The 128-byte block
 ------------------
 
 It turns out that this block of data is encrypted, but not in the way that you might expect. For example, the blocks of data that were decrypted
-during initialization were encrypted using AES, which is a symmetric cipher. That is, the same key is used to encrypt a message using AES as is
+during [initialization](http://kbhomes.github.com/2011/04/26/mtpz-initialization-part-1.html) were encrypted using AES, which is a symmetric cipher. That is, the same key is used to encrypt a message using AES as is
 used to decrypt it. In this case, however, this block of data was encrypted by using asymmetric cryptography (the same key is not used for both encryption
 and decryption); specifically, RSA was used.
 
-A quick lesson about RSA (since I realized I didn't really explain it very well in the previous post): it employs a public key and a private key.
+A quick lesson about [RSA](http://en.wikipedia.org/wiki/RSA) (since I realized I didn't really explain it very well in the previous post): it employs a public key and a private key.
 The private key, of course, remains a secret and cannot be known to anybody besides the owner of that key. The public key, on the other hand,
 is released to whomever wants it. The security of RSA comes from the fact that if a message is encrypted using the public key, only the owner
 of the private key will be able to decrypt it. During initialization, we decrypted certificates and RSA private key information. The private key
@@ -46,7 +47,7 @@ Okay, so now we have everything we need to decrypt this 128-byte block. Let's go
 
 That doesn't necessarily look any better. However, if multiple responses are decrypted and inspected, you'll notice that the first byte always seems
 to be `00`, so at least we know we're on the right track. After this block is decrypted, hash operations are performed, extremely similar to the hash
-operations that are performed during the signature generation of part 1. That is, a slight variation of SHA-1 is used on this block of data, among other
+operations that are performed during the signature generation of the ACM. That is, a slight variation of SHA-1 is used on this block of data, among other
 transformations. Once everything is done, we're left with a 16-byte block of data.
 
 <em><sub>Hash block:</sub></em>
@@ -58,8 +59,8 @@ second, larger block of data.
 The 832-byte block
 ------------------
 
-Contrary to the previous block of data, this block is encrypted using AES. The last time we encountered AES was during [initialization and](http://kbhomes.github.com/2011/04/26/mtpz-initialization-part-1.html), 
-fortunately, not much has changed. This time, instead of using the 16 bytes `B1 CE 71 1C 1E 1B 46 87 84 A0 84 90 D5 96 22 16` as our key, we use 16-byte hash 
+Contrary to the previous block of data, this block is encrypted using AES. The last time we encountered AES was during [initialization](http://kbhomes.github.com/2011/04/26/mtpz-initialization-part-1.html), 
+and fortunately, not much has changed. This time, instead of using the 16 bytes `B1 CE 71 1C 1E 1B 46 87 84 A0 84 90 D5 96 22 16` as our key, we use 16-byte hash 
 block that we calculated earlier. The key is still expanded as it was during initialization.
 
 This large block of data is decrypted by taking it as 16-byte chunks and decrypting those. The decryption process is the same AES decryption process used during initialization,
@@ -127,8 +128,8 @@ as the random bytes we generated; that is, to prevent the message from being con
 Following that are 128 bytes, which is the message signature. It is generated in a fashion similar to our own ACM's signature, which is to 
 concatenate the certificate data with the random bytes, perform a hash operation, and then sign it using RSA.
 
-Lastly, there are 32 bytes which seem to be a CBC-MAC code with SHA-256 applied (based on the strings within the application). This is similar to a digital
-signature, but it differs in that it uses a symmetric cipher as opposed to an asymmetric one like RSA.
+Lastly, there are 32 bytes which seem to be a [CBC-MAC](http://en.wikipedia.org/wiki/CBC-MAC) code with [SHA-256](http://en.wikipedia.org/wiki/SHA-2) applied (based on the strings within the application). 
+This is similar to a digital signature, but it differs in that it uses a symmetric cipher as opposed to an asymmetric one like RSA.
 
 ### Message signature
 
