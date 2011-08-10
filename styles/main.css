@@ -2,6 +2,11 @@
 a { text-decoration: none; color: white; }
 a:hover { color: gray; }
 
+html
+{
+	font-size: 0.9em;
+}
+
 .site
 {
 	font-family: sans-serif;
@@ -30,7 +35,7 @@ div.logo
 {
 	line-height: 130px;
 	text-align: center;
-	font-size: 30pt;
+	font-size: 24pt;
 }
 
 div.menu

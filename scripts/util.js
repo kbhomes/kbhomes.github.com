@@ -82,7 +82,7 @@ function hexTableEncode(x) {
 	for (i = 0; i < x.length; i++) {
 		if (i % 24 == 0) {
 			r += '<tr class="hex_row">';
-			r += '<td class="hex_address">' + padding((0x10 * (i / 8)).toString(16), '000000') + '</td>';
+			r += '<td class="hex_address">' + padding((i).toString(16), '000000') + '</td>';
 			r += '<td class="hex_value">';
 			doLast = true;
 		}
@@ -122,6 +122,6 @@ function hexTableEncode(x) {
 }
 
 function htmlEncode(str) {
-	return str.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
+	return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
