@@ -2,3 +2,8 @@ h1.title
 {
 	margin-bottom: 0px;
 }
+
+.post a
+{
+	text-decoration: underline;
+}
