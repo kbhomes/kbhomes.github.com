@@ -2,9 +2,8 @@
 layout: post
 title: "MTPZ: Handshake, Part 1 - Application Certificate Message"
 tags: [zune, mtpz]
+nav: blog
 ---
-
-<script type="text/javascript">addStylesheet("hextable.css");</script>
 
 So, in the time between this post and the post [detailing my initialization notes](http://kbhomes.github.com/2011/05/29/mtpz-notes-so-far.html), I managed to fully emulate
 the Zune software in its generation of its first message that is sent to the device. This is referred to as

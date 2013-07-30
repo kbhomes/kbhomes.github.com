@@ -2,6 +2,7 @@
 layout: post
 title: "MTPZ: Initial Analysis"
 tags: [zune, mtpz]
+nav: blog
 ---
 
 Microsoft created a now-standardized protocol called the Media Transfer Protocol (MTP)
@@ -36,7 +37,6 @@ sessions captures (from the Zune).
 
 ### Outbound:
 
-<script type="text/javascript">addStylesheet("hextable.css");</script>
 <div class="hex">
 <table class="hex_table">
 <tbody>

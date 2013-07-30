@@ -1,191 +1,437 @@
-/* Generic tag declarations */
-a { text-decoration: none; color: white; }
-a:hover { color: gray; }
+body {
+  font-family: sans-serif;
+  font-size: 12px;
+  color: black;
+  margin: 0px auto;
+  padding: 70px 0 0 0;
+  height: 100%;
+  background-color: #FDFDFD; }
 
-html
-{
-	font-size: 0.9em;
-}
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  margin: 0px auto;
+  padding: 0px;
+  color: white;
+  background-color: #101418; }
+  #header #logo {
+    float: left;
+    font-size: 24pt;
+    line-height: 70px; }
+    #header #logo a {
+      color: white;
+      text-decoration: none; }
+  #header #menu {
+    float: right;
+    height: 70px; }
+    #header #menu ul {
+      list-style: none;
+      display: block;
+      margin: 0 auto;
+      padding: 0;
+      text-align: center;
+      text-transform: uppercase; }
+      #header #menu ul li {
+        display: inline; }
+        #header #menu ul li a {
+          line-height: 70px;
+          padding: 0px 10px;
+          text-decoration: none;
+          font-size: 14pt;
+          color: #c0c0c0; }
+          #header #menu ul li a:hover, #header #menu ul li a.active {
+            color: #F11; }
 
-.site
-{
-	font-family: sans-serif;
-	color: black;
+#content {
+  min-height: 300px;
+  margin: 10px auto 20px auto; }
 
-	margin: 0px auto;
-	padding: 0px;
-	height: 100%;
-	background-color: #FCFCFC;
-}
+h1.title {
+  font-size: 1.3em;
+  margin-bottom: 0px; }
+  h1.title a {
+    text-decoration: none; }
 
-div.header
-{
-	width: 100%;
-	height: 175px;
-	margin: 0px auto;
-	padding: 0px;
+h2 {
+  font-size: 20px;
+  line-height: 20px;
+  margin: 20px 0px 10px 0px; }
 
-	color: white;
-	background-color: #101418;
+#footer {
+  clear: both;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #EEE;
+  color: #666;
+  font-size: 1em;
+  border-top: 1px solid #ccc;
+  padding: 30px 0; }
+  #footer .footer-header {
+    display: block;
+    font-size: 1.5em; }
 
-	position: relative;
-}
+.clear {
+  clear: both; }
 
-div.logo
-{
-	line-height: 130px;
-	text-align: center;
-	font-size: 24pt;
-}
+span.secret {
+  color: #ccc;
+  font-style: italic; }
 
-div.menu
-{
-	background-color: #800000;
-	height: 45px;
-	width: 100%;
+/*
 
-	position: absolute;
-	bottom: 0px;
-}
+Generated via the hex dump at: http://en.webhex.net/dump
+and using regex:
 
-ul.menu
-{
-	list-style: none;
-	display: block;
-	background-color: #800000;
-	margin: 0 auto;
-	padding: 0;
-	text-align: center;
-}
+	search:		(.{6})\s((.. ){16})(.*)$
+	replace:	<tr class="hex_line"><td class="hex_address">$1</td><td class="hex_value">$2</td><td class="hex_ascii">$4</td></tr>
 
-ul.menu li
-{
-	display: inline;
-}
+*/
+div.hex {
+  height: 350px;
+  padding: 10px;
+  overflow: auto; }
 
-ul.menu li a
-{
-	padding: 0px 2em;
-	line-height: 45px;
-	text-decoration: none;
+table.hex_table {
+  background: #272822;
+  color: #f8f8f2;
+  padding: 10px;
+  border: 1px solid white;
+  width: 100%;
+  -moz-box-shadow: 0 0 10px 3px #DDD;
+  -webkit-box-shadow: 0 0 10px 3px #DDD;
+  box-shadow: 0 0 10px 3px #DDD;
+  font-family: monospace;
+  overflow: auto; }
 
-	font-size: 14pt;
-	color: white;
-	background-color: #800000;
-}
+td.hex_address {
+  width: 77px;
+  text-align: left;
+  color: #C0C8E0; }
 
-ul.menu li a:hover
-{
-	color: #c0c0c0;
-}
+td.hex_value {
+  text-align: left; }
 
-div.content a { color: #203040; }
-div.content
-{
-	min-height: 300px;
-	margin: 10px auto 20px auto;
-	width: 950px;
-}
+td.hex_ascii {
+  text-align: left;
+  color: #E0FFE0; }
 
-div.left
-{
-	float: left;
-	width: 480px;
-	padding-right: 20px;
-}
+.post .title {
+  font-size: 24px; }
+.post .info {
+  margin-bottom: 20px; }
+  .post .info .date {
+    font-style: italic;
+    color: #404040; }
+  .post .info .tag {
+    color: #404040; }
 
-div.right
-{
-	float: right;
-	width: 430px;
-	padding-left: 20px;
-}
+table.posts {
+  border-spacing: 0;
+  width: 100%; }
+  table.posts tr {
+    height: 35px; }
+    table.posts tr td.date {
+      color: #666;
+      font-style: italic;
+      text-align: right;
+      width: 150px;
+      padding: 0px 20px 0px 0px;
+      border-right: 1px solid #aaa; }
+    table.posts tr td.title {
+      padding: 0px 0px 0px 20px; }
+    table.posts tr td.tags {
+      width: 250px;
+      text-align: right; }
+      table.posts tr td.tags .tag {
+        color: #666;
+        text-decoration: underline;
+        font-style: italic; }
 
-div.right h1.title a { text-decoration: none; }
-div.right h1.title
-{
-	font-size: 1.3em;
-	margin-bottom: 0px;
-}
+.no-posts {
+  margin: 10px 0px;
+  color: #802020;
+  font-style: normal; }
 
-div.right h2
-{
-	font-size: 1.2em;
-}
+div.project {
+  margin-bottom: 30px;
+  padding: 10px;
+  width: 100%;
+  border-bottom: 1px solid gray; }
 
-span.date
-{
-	font-style: italic;
-	font-size: 0.8em;
-	color: #404040;
-}
+div.project_preview {
+  float: left;
+  padding: 0px 20px 10px 0px; }
 
-span.tag
-{
-	font-size: 0.8em;
-	color: #404040;
-}
+div.project_preview img {
+  border: 1px solid white;
+  -moz-box-shadow: 0 0 10px 3px #DDD;
+  -webkit-box-shadow: 0 0 10px 3px #DDD;
+  box-shadow: 0 0 10px 3px #DDD; }
 
-div.footer
-{
-	clear: both;
-	position: relative;
-	width: 100%;
-	min-height: 250px;
-	height: 100%;
+h2.project_title {
+  margin-top: 0px; }
 
-	background-color: #303030;
-	color: #BBBBBB;
-	font-size: 1em;
-}
+span.project_subtitle {
+  color: #555;
+  font-weight: normal;
+  font-size: 0.6em; }
 
-div.feed_icon
-{
-	position: absolute;
-	top: 30px;
-	left: 30px;
-}
-div.feed_icon img
-{
-	width: 20px;
-	height: 20px;
-}
+.highlight .hll {
+  background-color: #49483e; }
 
-div.footer_inside
-{
-	width: 700px;
-	margin: 0px auto;
-	padding: 30px 0px;
-}
+.highlighttable {
+  background: #272822;
+  color: #f8f8f2;
+  padding: 10px;
+  border: 1px solid white;
+  width: 100%;
+  -moz-box-shadow: 0 0 10px 3px #DDD;
+  -webkit-box-shadow: 0 0 10px 3px #DDD;
+  box-shadow: 0 0 10px 3px #DDD; }
 
-div.footer_left
-{
-	float: left;
-	text-align: right;
-	width: 309px;
-	padding-right: 40px;
-	border-right: 1px solid white;
-}
+.highlight {
+  padding-left: 10px; }
 
-div.footer_right
-{
-	float: right;
-	width: 310px;
-	padding-left: 40px;
-}
+.highlight .c {
+  color: #71946b; }
 
-span.footer_header
-{
-	font-size: 1.5em;
-}
+/* Comment */
+.highlight .err {
+  color: #960050;
+  background-color: #1e0010; }
 
-.clear
-{
-	clear: both;
-}
+/* Error */
+.highlight .k {
+  color: #66d9ef; }
 
-span.secret
-{
-	color: #ccc;
-	font-style: italic;
-}
+/* Keyword */
+.highlight .l {
+  color: #ae81ff; }
+
+/* Literal */
+.highlight .n {
+  color: #f8f8f2; }
+
+/* Name */
+.highlight .o {
+  color: #ff96bc; }
+
+/* Operator */
+.highlight .p {
+  color: #f8f8f2; }
+
+/* Punctuation */
+.highlight .cm {
+  color: #71946b; }
+
+/* Comment.Multiline */
+.highlight .cp {
+  color: #71946b; }
+
+/* Comment.Preproc */
+.highlight .c1 {
+  color: #71946b; }
+
+/* Comment.Single */
+.highlight .cs {
+  color: #71946b; }
+
+/* Comment.Special */
+.highlight .ge {
+  font-style: italic; }
+
+/* Generic.Emph */
+.highlight .gs {
+  font-weight: bold; }
+
+/* Generic.Strong */
+.highlight .kc {
+  color: #66d9ef; }
+
+/* Keyword.Constant */
+.highlight .kd {
+  color: #66d9ef; }
+
+/* Keyword.Declaration */
+.highlight .kn {
+  color: #ff96bc; }
+
+/* Keyword.Namespace */
+.highlight .kp {
+  color: #66d9ef; }
+
+/* Keyword.Pseudo */
+.highlight .kr {
+  color: #66d9ef; }
+
+/* Keyword.Reserved */
+.highlight .kt {
+  color: #66d9ef; }
+
+/* Keyword.Type */
+.highlight .ld {
+  color: #e6db74; }
+
+/* Literal.Date */
+.highlight .m {
+  color: #ae81ff; }
+
+/* Literal.Number */
+.highlight .s {
+  color: #e6db74; }
+
+/* Literal.String */
+.highlight .na {
+  color: #a6e22e; }
+
+/* Name.Attribute */
+.highlight .nb {
+  color: #f8f8f2; }
+
+/* Name.Builtin */
+.highlight .nc {
+  color: #a6e22e; }
+
+/* Name.Class */
+.highlight .no {
+  color: #66d9ef; }
+
+/* Name.Constant */
+.highlight .nd {
+  color: #a6e22e; }
+
+/* Name.Decorator */
+.highlight .ni {
+  color: #f8f8f2; }
+
+/* Name.Entity */
+.highlight .ne {
+  color: #a6e22e; }
+
+/* Name.Exception */
+.highlight .nf {
+  color: #a6e22e; }
+
+/* Name.Function */
+.highlight .nl {
+  color: #f8f8f2; }
+
+/* Name.Label */
+.highlight .nn {
+  color: #f8f8f2; }
+
+/* Name.Namespace */
+.highlight .nx {
+  color: #a6e22e; }
+
+/* Name.Other */
+.highlight .py {
+  color: #f8f8f2; }
+
+/* Name.Property */
+.highlight .nt {
+  color: #ff96bc; }
+
+/* Name.Tag */
+.highlight .nv {
+  color: #f8f8f2; }
+
+/* Name.Variable */
+.highlight .ow {
+  color: #ff96bc; }
+
+/* Operator.Word */
+.highlight .w {
+  color: #f8f8f2; }
+
+/* Text.Whitespace */
+.highlight .mf {
+  color: #ae81ff; }
+
+/* Literal.Number.Float */
+.highlight .mh {
+  color: #ae81ff; }
+
+/* Literal.Number.Hex */
+.highlight .mi {
+  color: #ae81ff; }
+
+/* Literal.Number.Integer */
+.highlight .mo {
+  color: #ae81ff; }
+
+/* Literal.Number.Oct */
+.highlight .sb {
+  color: #e6db74; }
+
+/* Literal.String.Backtick */
+.highlight .sc {
+  color: #e6db74; }
+
+/* Literal.String.Char */
+.highlight .sd {
+  color: #e6db74; }
+
+/* Literal.String.Doc */
+.highlight .s2 {
+  color: #e6db74; }
+
+/* Literal.String.Double */
+.highlight .se {
+  color: #ae81ff; }
+
+/* Literal.String.Escape */
+.highlight .sh {
+  color: #e6db74; }
+
+/* Literal.String.Heredoc */
+.highlight .si {
+  color: #e6db74; }
+
+/* Literal.String.Interpol */
+.highlight .sx {
+  color: #e6db74; }
+
+/* Literal.String.Other */
+.highlight .sr {
+  color: #e6db74; }
+
+/* Literal.String.Regex */
+.highlight .s1 {
+  color: #e6db74; }
+
+/* Literal.String.Single */
+.highlight .ss {
+  color: #e6db74; }
+
+/* Literal.String.Symbol */
+.highlight .bp {
+  color: #f8f8f2; }
+
+/* Name.Builtin.Pseudo */
+.highlight .vc {
+  color: #f8f8f2; }
+
+/* Name.Variable.Class */
+.highlight .vg {
+  color: #f8f8f2; }
+
+/* Name.Variable.Global */
+.highlight .vi {
+  color: #f8f8f2; }
+
+/* Name.Variable.Instance */
+.highlight .il {
+  color: #ae81ff; }
+
+/* Literal.Number.Integer.Long */
+.linenos {
+  color: #808890; }
+
+ul.contacts li {
+  list-style: none;
+  height: 40px;
+  line-height: 40px; }

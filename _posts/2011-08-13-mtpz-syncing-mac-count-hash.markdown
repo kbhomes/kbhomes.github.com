@@ -2,9 +2,8 @@
 layout: post
 title: "MTPZ: Syncing - MAC Count Hash"
 tags: [zune, mtpz]
+nav: blog
 ---
-
-<script type="text/javascript">addStylesheet("hextable.css");</script>
 
 I actually did not catch this part of the MTPZ protocol until just recently, the reason being that this part occurs when you are
 sending files to the device. As I said in the MTP Handshake Packets post, I stopped capturing the traffic as soon as the device

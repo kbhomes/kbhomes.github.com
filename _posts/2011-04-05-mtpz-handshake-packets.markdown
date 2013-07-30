@@ -2,6 +2,7 @@
 layout: post
 title: "MTPZ: Handshake Packets"
 tags: [zune, mtpz]
+nav: blog
 ---
 
 In the [previous post]({{ site.url }}/2011/04/03/mtpz-initial-analysis.html), I presented a USB session between the Windows Zune software and
@@ -23,8 +24,6 @@ The transaction number allows you to see the relationship between the inbound an
 
 <script type="text/javascript" src="/scripts/util.js" ></script>
 
-<script type="text/javascript">addStylesheet("mtptable.css");</script>
-<script type="text/javascript">addStylesheet("hextable.css");</script>
 <script type="text/javascript">
 
 function viewData(encoded) {
@@ -85,7 +84,6 @@ function viewData(encoded) {
 
 ### Inbound MTP packets:
 
-<script type="text/javascript">addStylesheet("mtptable.css");</script>
 <table class="packet_table">
 	<thead>
 		<tr>

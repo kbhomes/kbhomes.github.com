@@ -2,6 +2,7 @@
 layout: post
 title: "MTPZ: Initialization, Part 2"
 tags: [zune, mtpz]
+nav: blog
 ---
 
 Well, as I found out soon enough after [publishing my notes](http://kbhomes.github.com/2011/05/29/mtpz-notes-so-far.html),

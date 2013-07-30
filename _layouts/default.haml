@@ -1,0 +1,49 @@
+!!!
+%html
+  %head
+    %title Sajid Anwar - {{ page.title }}
+    %link{:href => "/styles/vendor/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/styles/main.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "/styles/syntax.css", :rel => "stylesheet", :type => "text/css"}/
+    %script{:src => "http://code.jquery.com/jquery-1.5.2.min.js", :type => "text/javascript"}
+    %script{:src => "/scripts/jquery.simplemodal.1.4.1.min.js", :type => "text/javascript"}
+
+  %body
+
+    #header
+      .container
+        #logo
+          %a{ :href => '/' } sajid anwar
+        #menu
+          %ul
+            %li
+              %a{ :href => "/index.html", :class => "{% if page.nav == 'home' %}active{% endif %}" }
+                home
+            %li
+              %a{ :href => "/blog.html", :class => "{% if page.nav == 'blog' %}active{% endif %}" }
+                blog
+            %li
+              %a{ :href => "/projects.html", :class => "{% if page.nav == 'projects' %}active{% endif %}" }
+                projects
+            %li
+              %a{ :href => "/contact.html", :class => "{% if page.nav == 'contact' %}active{% endif %}" }
+                contact
+
+    #content.container
+      {{ content }}
+
+    #footer
+      .footer-inside.container
+        .row
+          .span6
+            %span.footer-header about
+
+            %p Copyright &copy; 2013 Sajid Anwar
+
+          .span6
+            %span.footer-header contact
+
+            %a{:href => "https://github.com/kbhomes/"} GitHub repositories
+            %br/
+            %span#email
+              %a{:href => "", :onclick => "toggleEmail(); return false;"} Email

@@ -2,9 +2,8 @@
 layout: post
 title: "MTPZ: Implementation"
 tags: [zune, mtpz]
+nav: blog
 ---
-
-<script type="text/javascript">addStylesheet("hextable.css");</script>
 
 Oh gosh, when did it become February? It's been quite a while, but I blame school! Anyhow, it might be a good idea
 to give an update on my progress of implementing the Zune functionality onto the libmtp project.

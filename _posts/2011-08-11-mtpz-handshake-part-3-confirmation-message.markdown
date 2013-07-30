@@ -2,9 +2,8 @@
 layout: post
 title: "MTPZ: Handshake, Part 3 - Confirmation Message"
 tags: [zune, mtpz]
+nav: blog
 ---
-
-<script type="text/javascript">addStylesheet("hextable.css");</script>
 
 Welcome back! Unlike the other sections of the handshake, I was able to reverse engineer this final part with relative ease, 
 due to the fact that much of the process involved code that was used in the other sections.

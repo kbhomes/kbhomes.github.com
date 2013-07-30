@@ -1,36 +1,40 @@
----
+\---
 layout: default
----
-<div class='post'>
-  <h1 class='title'>{{ page.title }}</h1>
-  <div class='info'>
-    <span class='date'>
+\---
+
+.post
+  %h1.title {{ page.title }}
+
+  .info
+    %span.date
       {{ page.date | date_to_string }}
-    </span>
+
     {% for tag in page.tags %}
-    <span class='tag'>
-      - <a href="{{ site.url }}/blog.html?tag={{ tag | escape }}">{{ tag }}</a>
-    </span>
+    %span.tag
+      \- <a href="{{ site.url }}/blog.html?tag={{ tag | escape }}">{{ tag }}</a>
     {% endfor %}
-  </div>
-  <div class='content'>{{ content }}</div>
-</div>
-<br>
-<div id='disqus_thread'></div>
-<script>
+
+  .content {{ content }}
+
+%br/
+
+#disqus_thread
+
+:javascript
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'sajidanwarblog'; // required: replace example with your forum shortname
-  
+
     // The following are highly recommended additional parameters. Remove the slashes in front to use.
     var disqus_identifier = '{{ page.url }}';
     var disqus_url = 'http://kbhomes.github.com{{ page.url }}';
-  
+
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a class='dsq-brlink' href='http://disqus.com'>blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+%noscript Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+
+%a.dsq-brlink{ :href=> "http://disqus.com" } blog comments powered by <span class="logo-disqus">Disqus</span>

@@ -2,9 +2,8 @@
 layout: post
 title: "MTPZ: Handshake, Part 2 - Validate Handshake Response"
 tags: [zune, mtpz]
+nav: blog
 ---
-
-<script type="text/javascript">addStylesheet("hextable.css");</script>
 
 It's been a fair amount of time since the [last post on part 1 of the handshake](http://kbhomes.github.com/2011/07/06/mtpz-handshake-part-1-application-certificate-message.html), 
 which dealt with generation of the Application Certificate Message (ACM for short). 

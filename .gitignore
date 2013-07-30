@@ -1,1 +1,13 @@
+### Jekyll ###
 _site
+
+### RubyMine ###
+.idea
+
+### SASS ###
+#*.sass
+#*.scss
+#.sass-cache
+
+### Haml ###
+#*.haml

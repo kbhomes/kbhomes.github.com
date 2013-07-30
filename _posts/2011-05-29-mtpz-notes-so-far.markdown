@@ -2,6 +2,7 @@
 layout: post
 title: "MTPZ: Notes, So Far"
 tags: [zune, mtpz]
+nav: blog
 ---
 
 So it has been quite a while, and between the last blog post and now, I haven't gotten too much

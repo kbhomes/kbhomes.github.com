@@ -2,9 +2,8 @@
 layout: post
 title: "MTPZ: Initialization, Part 1"
 tags: [zune, mtpz]
+nav: blog
 ---
-
-<script type="text/javascript">addStylesheet("hextable.css");</script>
 
 It's been a while, but at least *some* progress has been made. Hopefully during this absence of posts,
 you haven't forgotten about the basic rules of programming.

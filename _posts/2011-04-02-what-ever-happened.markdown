@@ -2,6 +2,7 @@
 layout: post
 title: What ever happened?
 tags: [blog, projects]
+nav: blog
 ---
 
 Yes, I finally have a website of sorts. Maybe now I can get my name out there.
