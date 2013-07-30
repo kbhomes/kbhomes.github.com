@@ -40,6 +40,11 @@
         </div>
       </div>
     </div>
+    {% if page.banner %}
+    <div id='banner'>
+      {{ page.banner }}
+    </div>
+    {% endif %}
     <div class='container' id='content'>
       {{ content }}
     </div>

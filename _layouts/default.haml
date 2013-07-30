@@ -29,6 +29,11 @@
               %a{ :href => "/contact.html", :class => "{% if page.nav == 'contact' %}active{% endif %}" }
                 contact
 
+    {% if page.banner %}
+    #banner
+      {{ page.banner }}
+    {% endif %}
+
     #content.container
       {{ content }}
 
