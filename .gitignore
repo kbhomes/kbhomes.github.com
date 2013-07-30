@@ -5,9 +5,9 @@ _site
 .idea
 
 ### SASS ###
-#*.sass
-#*.scss
-#.sass-cache
+*.sass
+*.scss
+.sass-cache
 
 ### Haml ###
-#*.haml
+*.haml
