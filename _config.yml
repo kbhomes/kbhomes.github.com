@@ -1,8 +1,1 @@
 pygments: true
-
-url: "http://kbhomes.github.io"
-#url: "http://localhost:4000"
-
-sass:
-    syntax: scss
-    style:  compressed
