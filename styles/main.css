@@ -18,7 +18,8 @@ a:hover {
   margin: 0px auto;
   padding: 0px;
   color: white;
-  background-color: #101418; }
+  background-color: #101418;
+  background: url("../images/diagmonds.png"); }
   #header #logo {
     float: left;
     font-size: 24pt;
@@ -84,9 +85,10 @@ span.secret {
   font-style: italic; }
 
 #banner {
-  background-color: #eee;
   color: #666;
-  border-bottom: 1px solid #ddd; }
+  border-bottom: 1px solid #ddd;
+  background-color: #eee;
+  background: url("../images/square_bg.png"); }
   #banner .section {
     padding: 0 0 10px 0; }
     #banner .section h1 {
