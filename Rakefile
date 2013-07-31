@@ -17,6 +17,11 @@ namespace :site do
         `git remote add origin #{REMOTE_URL}`
       end
 
+      # Only create the .gitignore if it is not available
+      unless File.exists? '.gitignore'
+        copy '../.deploy-gitignore', './.gitignore'
+      end
+
       # Add everything to the commit.
       puts 'Committing all _site files'
       `git add .`
