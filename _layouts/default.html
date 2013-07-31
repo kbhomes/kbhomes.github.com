@@ -40,9 +40,9 @@
         </div>
       </div>
     </div>
-    {% if page.banner %}
+    {% if page.nav == 'home' %}
     <div id='banner'>
-      {{ page.banner }}
+      {% include banner.html %}
     </div>
     {% endif %}
     <div class='container' id='content'>

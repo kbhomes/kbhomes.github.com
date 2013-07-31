@@ -1,0 +1,43 @@
+@import 'palette';
+
+#banner {
+  background-color: #eee;
+  color: #666;
+  border-bottom: 1px solid #ddd;
+
+  .section {
+    padding: 0 0 10px 0;
+
+    h1 {
+      font-size: 18px;
+      font-weight: normal;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  .section.recent-posts {
+    .post-link {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      small.date {
+        color: #999;
+        display: inline-block;
+        width: 70px;
+        text-align: right;
+        vertical-align: middle;
+      }
+
+      a {
+        color: #666;
+        text-decoration: none;
+
+        &:hover {
+          color: $color-red;
+        }
+      }
+    }
+  }
+}

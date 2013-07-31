@@ -1,3 +1,5 @@
+@import 'include/palette';
+
 $header-height: 70px;
 
 body {
@@ -11,6 +13,12 @@ body {
   background-color: #FDFDFD;
 }
 
+a {
+  &:hover {
+    color: $color-red;
+  }
+}
+
 #header {
   position: fixed;
   top: 0;
@@ -21,7 +29,7 @@ body {
   padding: 0px;
 
   color: white;
-  background-color: #101418;
+  background-color: $color-dark;
 
   #logo {
     float: left;
@@ -58,7 +66,7 @@ body {
           color: #c0c0c0;
 
           &:hover, &.active {
-            color: #F11;
+            color: $color-red;
           }
         }
       }
@@ -117,6 +125,7 @@ span.secret
   font-style: italic;
 }
 
+@import "include/banner";
 @import "include/hextable";
 @import "include/post";
 @import "include/blog";

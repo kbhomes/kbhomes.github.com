@@ -7,6 +7,9 @@ body {
   height: 100%;
   background-color: #FDFDFD; }
 
+a:hover {
+  color: #f21d41; }
+
 #header {
   position: fixed;
   top: 0;
@@ -42,7 +45,7 @@ body {
           font-size: 14pt;
           color: #c0c0c0; }
           #header #menu ul li a:hover, #header #menu ul li a.active {
-            color: #F11; }
+            color: #f21d41; }
 
 #content {
   min-height: 300px;
@@ -79,6 +82,33 @@ h2 {
 span.secret {
   color: #ccc;
   font-style: italic; }
+
+#banner {
+  background-color: #eee;
+  color: #666;
+  border-bottom: 1px solid #ddd; }
+  #banner .section {
+    padding: 0 0 10px 0; }
+    #banner .section h1 {
+      font-size: 18px;
+      font-weight: normal;
+      text-align: center;
+      text-transform: uppercase; }
+  #banner .section.recent-posts .post-link {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    #banner .section.recent-posts .post-link small.date {
+      color: #999;
+      display: inline-block;
+      width: 70px;
+      text-align: right;
+      vertical-align: middle; }
+    #banner .section.recent-posts .post-link a {
+      color: #666;
+      text-decoration: none; }
+      #banner .section.recent-posts .post-link a:hover {
+        color: #f21d41; }
 
 /*
 

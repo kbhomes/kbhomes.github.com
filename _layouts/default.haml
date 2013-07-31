@@ -29,9 +29,9 @@
               %a{ :href => "/contact.html", :class => "{% if page.nav == 'contact' %}active{% endif %}" }
                 contact
 
-    {% if page.banner %}
+    {% if page.nav == 'home' %}
     #banner
-      {{ page.banner }}
+      {% include banner.html %}
     {% endif %}
 
     #content.container

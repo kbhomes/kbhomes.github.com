@@ -1,0 +1,18 @@
+.container
+  .row
+    .span4.section.about-me
+      %h1 about me
+
+    .span4.section.recent-projects
+      %h1 recent projects
+
+    .span4.section.recent-posts
+      %h1 recent posts
+
+      .content
+        {% for post in site.posts limit:5 %}
+        .post-link
+          %a{ :href => '{{ post.url }}' }
+            %small.date {{ post.date | date_to_string }}
+            {{ post.title }}
+        {% endfor %}

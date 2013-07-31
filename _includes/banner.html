@@ -1,0 +1,23 @@
+<div class='container'>
+  <div class='row'>
+    <div class='span4 section about-me'>
+      <h1>about me</h1>
+    </div>
+    <div class='span4 section recent-projects'>
+      <h1>recent projects</h1>
+    </div>
+    <div class='span4 section recent-posts'>
+      <h1>recent posts</h1>
+      <div class='content'>
+        {% for post in site.posts limit:5 %}
+        <div class='post-link'>
+          <a href='{{ post.url }}'>
+            <small class='date'>{{ post.date | date_to_string }}</small>
+            {{ post.title }}
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
