@@ -1,3 +1,10 @@
 *.haml
 *.scss
 Rakefile
+
+/* Jekyll */
+_site/
+
+/* JetBrains */
+.idea/
+*.iml

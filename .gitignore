@@ -2,8 +2,9 @@
 _site
 _deploy
 
-### RubyMine ###
+### JetBrains ###
 .idea
+*.iml
 
 ### SASS ###
 #*.sass
@@ -12,3 +13,7 @@ _deploy
 
 ### Haml ###
 #*.haml
+
+### RVM ###
+.ruby-version
+.ruby-gemset
