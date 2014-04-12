@@ -24,7 +24,7 @@ namespace :site do
 
       # Add everything to the commit.
       puts 'Committing all _site files'
-      `git add .`
+      `git add --all .`
       `git commit -m "#{message}"`
 
       # Push to the remote.
