@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sajid Anwar - MTPZ: Initialization, Part 2</title>
+    <link href='/styles/vendor/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='/styles/main.css' rel='stylesheet' type='text/css'>
+    <script src='http://code.jquery.com/jquery-1.5.2.min.js' type='text/javascript'></script>
+    <script src='/scripts/jquery.simplemodal.1.4.1.min.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div id='header'>
+      <div class='container'>
+        <div id='logo'>
+          <a href='/'>sajid anwar</a>
+        </div>
+        <div id='menu'>
+          <ul>
+            <li>
+              <a class="" href='/index.html'>
+                home
+              </a>
+            </li>
+            <li>
+              <a class="active" href='/blog.html'>
+                blog
+              </a>
+            </li>
+            <li>
+              <a class="" href='/projects.html'>
+                projects
+              </a>
+            </li>
+            <li>
+              <a class="" href='/contact.html'>
+                contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class='container' id='content'>
+      <div class='post'>
+  <h1 class='title'>MTPZ: Initialization, Part 2</h1>
+  <div class='info'>
+    <span class='date'>
+      05 Jul 2011
+    </span>
+    
+    <span class='tag'>
+      - <a href="http://localhost:4000/blog.html?tag=zune">zune</a>
+    </span>
+    
+    <span class='tag'>
+      - <a href="http://localhost:4000/blog.html?tag=mtpz">mtpz</a>
+    </span>
+    
+  </div>
+  <div class='content'><p>Well, as I found out soon enough after <a href="http://kbhomes.github.com/2011/05/29/mtpz-notes-so-far.html">publishing my notes</a>,
+it seems that essentially I <em>had</em> solved the mystery of initialization. Go figure.</p>
+
+<p>So, as much as I hate writing a blog post so short and insubstantial, I felt it necessary to create one to give closure to initialization.</p>
+
+<p>A quick recap of what is done in initialization:</p>
+
+<ul>
+  <li>Two blocks of data are decrypted by the software; the first is the certificate data, and the second is the RSA private key data.</li>
+  <li>The certificate data is deserialized into a certificate structure for easy access, and the RSA private key data is stored.</li>
+</ul>
+
+<p>That’s really it.</p>
+
+<p>Go ahead and just meet me <a href="http://kbhomes.github.com/2011/07/06/mtpz-handshake-part-1-application-certificate-message.html">at the next post</a>, 
+which deals with generating the first message that is sent by the software to the device.</p>
+</div>
+</div>
+<br>
+<div id='disqus_thread'></div>
+<script>
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sajidanwarblog'; // required: replace example with your forum shortname
+  
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+    var disqus_identifier = '/2011/07/05/mtpz-initialization-part-2.html';
+    var disqus_url = 'http://kbhomes.github.com/2011/07/05/mtpz-initialization-part-2.html';
+  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a class='dsq-brlink' href='http://disqus.com'>blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </div>
+    <div id='footer'>
+      <div class='footer-inside container'>
+        <div class='row'>
+          <div class='span6'>
+            <span class='footer-header'>about</span>
+            <p>Copyright &copy; 2017 Sajid Anwar</p>
+          </div>
+          <div class='span6'>
+            <span class='footer-header'>contact</span>
+            <a href='https://github.com/kbhomes/'>GitHub repositories</a>
+            <br>
+            <span id='email'>
+              <a href='' onclick='toggleEmail(); return false;'>Email</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

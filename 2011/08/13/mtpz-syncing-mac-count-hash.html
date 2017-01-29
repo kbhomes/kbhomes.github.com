@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sajid Anwar - MTPZ: Syncing - MAC Count Hash</title>
+    <link href='/styles/vendor/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='/styles/main.css' rel='stylesheet' type='text/css'>
+    <script src='http://code.jquery.com/jquery-1.5.2.min.js' type='text/javascript'></script>
+    <script src='/scripts/jquery.simplemodal.1.4.1.min.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div id='header'>
+      <div class='container'>
+        <div id='logo'>
+          <a href='/'>sajid anwar</a>
+        </div>
+        <div id='menu'>
+          <ul>
+            <li>
+              <a class="" href='/index.html'>
+                home
+              </a>
+            </li>
+            <li>
+              <a class="active" href='/blog.html'>
+                blog
+              </a>
+            </li>
+            <li>
+              <a class="" href='/projects.html'>
+                projects
+              </a>
+            </li>
+            <li>
+              <a class="" href='/contact.html'>
+                contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class='container' id='content'>
+      <div class='post'>
+  <h1 class='title'>MTPZ: Syncing - MAC Count Hash</h1>
+  <div class='info'>
+    <span class='date'>
+      13 Aug 2011
+    </span>
+    
+    <span class='tag'>
+      - <a href="http://localhost:4000/blog.html?tag=zune">zune</a>
+    </span>
+    
+    <span class='tag'>
+      - <a href="http://localhost:4000/blog.html?tag=mtpz">mtpz</a>
+    </span>
+    
+  </div>
+  <div class='content'><p>I actually did not catch this part of the MTPZ protocol until just recently, the reason being that this part occurs when you are
+sending files to the device. As I said in the MTP Handshake Packets post, I stopped capturing the traffic as soon as the device
+had completed the handshake, and so this part was not known to me until I tried to actually send a file to my Zune.</p>
+
+<p>For starters, the MTP command to start a sync session with the device is <code>0x9214</code>, <code>PTP_OC_MTP_WMDRMPD_EnableTrustedFilesOperations</code>.
+This command actually has four parameters, although it’s more sensible to consider these parameters as one 16-byte hash that has been
+split over four 4-byte parameters.</p>
+
+<h2 id="open-secure-sync-session">Open secure sync session</h2>
+
+<p>So let’s start again with our 32-byte hash from part 3 of the handshake, our validate handshake response step.</p>
+
+<p><em><sub>CBC-MAC/SHA-256 hash:</sub></em></p>
+<table class="hex_table"><tbody><tr class="hex_row"><td class="hex_address">000000</td><td class="hex_value">7F E1 15 37 D4 47 8B 1F A8 DB 3D A6 AF DF 18 14 0D 52 47 85 FC 6F E7 54 </td><td class="hex_ascii">...7.G....=......RG..o.T</td></tr><tr class="hex_row"><td class="hex_address">000018</td><td class="hex_value">18 36 FD 58 A6 00 06 E9 </td><td class="hex_ascii">.6.X....</td></tr></tbody></table>
+
+<p>A variable, which we’ll call <code>macCount</code>, is a 4-byte integer which is set to the 4 bytes that are 16 bytes into the hash (confusing sentence,
+I know). So, in this instance, it will have the value of <code>0x0D524785</code>.</p>
+
+<p>The next parts of the process are exactly the same as during part 3. That is, the last 16 bytes of the CBC-MAC/SHA-256 hash are truncated,
+and the remaining 16 bytes are used as an encryption key. Empty bytes are then encrypted with this key, and two transformations are applied
+to obtain two different 16-byte blocks of data. There is at this point a slight alteration in the process. We first create a new 16-byte
+block of data, set the first four bytes to the bytes of <code>macCount</code>, and then set the fifth byte to <code>128</code>. Then, we XOR this entire block
+of data with the second transformed block from earlier. Finally, we encrypt this 16-byte block with our truncated hash as a key.</p>
+
+<p>This 16-byte block is then split into four 4-byte blocks, and each of these blocks is used as a parameter in our <code>EnableTrustedFilesOperations</code>
+MTP packet. After sending this MTP packet, files can be sent to the device with absolute freedom.</p>
+
+<h2 id="implementation-progress">Implementation progress</h2>
+
+<p>Up until this point, I had implemented the entire handshake in… JavaScript. I’m not kidding. Its typed arrays and quick prototyping made me
+just go with it. Unfortunately, libmtp is implemented entirely in C, so in order to add on the MTPZ extensions, I need to port my JavaScript to C.
+Absolutely not an impossible task (rather, it’s very plausible), but it will take a bit of time.</p>
+
+<p>Right now, I’ve basically jury-rigged a system for libmtp to make sure that using the Zune from Linux was actually viable:</p>
+
+<ul>
+  <li>libmtp connects to the Zune</li>
+  <li>libmtp prompts me for the Application Certificate Message, which I generate and copy from my JavaScript implementation</li>
+  <li>libmtp sends off the ACM to the Zune</li>
+  <li>libmtp receives and displays the handshake response</li>
+  <li>I copy the handshake response, paste it into my JavaScript implementation and generate the confirmation message</li>
+  <li>libmtp prompts me for the confirmation message and sends it off to the Zune</li>
+</ul>
+
+<p>You won’t believe how excited I was when the Zune displayed the ‘connected’ text on its screen after this point. The Zune storage, after this, is
+unlocked for <em>reading</em> only. In order to write to the Zune, I generate the four 4-byte blocks as explained above and enter them as libmtp prompts for them.
+Once the <code>EnableTrustedFilesOperations</code> MTP packet is sent, the Zune displays the ‘syncing’ text on its screen, and its storage is accessible for writing.</p>
+
+<p>Fantastic progress, I have to say.</p>
+
+</div>
+</div>
+<br>
+<div id='disqus_thread'></div>
+<script>
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'sajidanwarblog'; // required: replace example with your forum shortname
+  
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+    var disqus_identifier = '/2011/08/13/mtpz-syncing-mac-count-hash.html';
+    var disqus_url = 'http://kbhomes.github.com/2011/08/13/mtpz-syncing-mac-count-hash.html';
+  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a class='dsq-brlink' href='http://disqus.com'>blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </div>
+    <div id='footer'>
+      <div class='footer-inside container'>
+        <div class='row'>
+          <div class='span6'>
+            <span class='footer-header'>about</span>
+            <p>Copyright &copy; 2017 Sajid Anwar</p>
+          </div>
+          <div class='span6'>
+            <span class='footer-header'>contact</span>
+            <a href='https://github.com/kbhomes/'>GitHub repositories</a>
+            <br>
+            <span id='email'>
+              <a href='' onclick='toggleEmail(); return false;'>Email</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

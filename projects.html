@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sajid Anwar - Projects</title>
+    <link href='/styles/vendor/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='/styles/main.css' rel='stylesheet' type='text/css'>
+    <script src='http://code.jquery.com/jquery-1.5.2.min.js' type='text/javascript'></script>
+    <script src='/scripts/jquery.simplemodal.1.4.1.min.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div id='header'>
+      <div class='container'>
+        <div id='logo'>
+          <a href='/'>sajid anwar</a>
+        </div>
+        <div id='menu'>
+          <ul>
+            <li>
+              <a class="" href='/index.html'>
+                home
+              </a>
+            </li>
+            <li>
+              <a class="" href='/blog.html'>
+                blog
+              </a>
+            </li>
+            <li>
+              <a class="active" href='/projects.html'>
+                projects
+              </a>
+            </li>
+            <li>
+              <a class="" href='/contact.html'>
+                contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class='container' id='content'>
+      <h1>Projects</h1>
+<div class='project'>
+  <div class='project_preview'>
+    <img src='/images/zune.png'>
+  </div>
+  <div class='project_details'>
+    <h2 class='project_title'>
+      <a href='/blog.html?tag=mtpz'>Zune MTPZ Handshake</a>
+      <span class='project_subtitle'>[ongoing research]</span>
+    </h2>
+    <p class='project_description'>
+      The Zune family of devices performs a proprietary handshake with authorized Zune
+      software in order to unlock the device for syncing. Therefore, on a platform where Zune software does not exist
+      (e.g.: Linux), one cannot sync with the device nor modify it.
+    </p>
+    <p>
+      The aim of this project is to reconstruct that handshake, adding it onto the open source libmtp project such that
+      media players can benefit from this. The approach I am taking currently is to disassemble the Objective-C application
+      Windows Phone 7 Connector for the Mac (which implements this MTPZ handshake).
+    </p>
+  </div>
+  <div class='clear'></div>
+</div>
+<div class='project'>
+  <div class='project_details'>
+    <h2 class='project_title'>
+      <a href='https://github.com/kbhomes/TextCaptchaBreaker'>TextCaptchaBreaker</a>
+      <span class='project_subtitle'>[hosted on GitHub]</span>
+    </h2>
+    <p class='project_description'>
+      TextCaptchaBreaker was a quick project, written in Python, to demonstrate the effectiveness (or lack thereof) of the
+      <a href='http://textcaptcha.com'>textCaptcha service</a>
+      as a viable alternative to the current standard of visual CAPTCHAs.
+    </p>
+  </div>
+  <div class='clear'></div>
+</div>
+
+    </div>
+    <div id='footer'>
+      <div class='footer-inside container'>
+        <div class='row'>
+          <div class='span6'>
+            <span class='footer-header'>about</span>
+            <p>Copyright &copy; 2017 Sajid Anwar</p>
+          </div>
+          <div class='span6'>
+            <span class='footer-header'>contact</span>
+            <a href='https://github.com/kbhomes/'>GitHub repositories</a>
+            <br>
+            <span id='email'>
+              <a href='' onclick='toggleEmail(); return false;'>Email</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

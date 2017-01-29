@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sajid Anwar - Home</title>
+    <link href='/styles/vendor/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <link href='/styles/main.css' rel='stylesheet' type='text/css'>
+    <script src='http://code.jquery.com/jquery-1.5.2.min.js' type='text/javascript'></script>
+    <script src='/scripts/jquery.simplemodal.1.4.1.min.js' type='text/javascript'></script>
+  </head>
+  <body>
+    <div id='header'>
+      <div class='container'>
+        <div id='logo'>
+          <a href='/'>sajid anwar</a>
+        </div>
+        <div id='menu'>
+          <ul>
+            <li>
+              <a class="active" href='/index.html'>
+                home
+              </a>
+            </li>
+            <li>
+              <a class="" href='/blog.html'>
+                blog
+              </a>
+            </li>
+            <li>
+              <a class="" href='/projects.html'>
+                projects
+              </a>
+            </li>
+            <li>
+              <a class="" href='/contact.html'>
+                contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div id='banner'>
+      <div class='container'>
+  <div class='row'>
+    <div class='span5 section about-me'>
+      <h1>about me</h1>
+      <div class='media'>
+        <div class='pull-right'>
+        </div>
+        <div class='media-body about-text'>
+          I am a Computer Science master's student at the Georgia Institute of Technology,
+          focusing on computational perception and robotics. I obtained my bachelor's degree
+          in Computer Science from Arizona State University in 2016.
+        </div>
+      </div>
+    </div>
+    <div class='span2 section'>
+      <img class='profile media-object' src="https://avatars3.githubusercontent.com/u/479569?v=3&s=100">
+    </div>
+    <div class='span5 section recent-posts'>
+      <h1>recent posts</h1>
+      <div class='content'>
+        
+        <div class='post-link'>
+          <a href='/2012/02/13/mtpz-implementation.html'>
+            <small class='date'>13 Feb 2012</small>
+            MTPZ: Implementation
+          </a>
+        </div>
+        
+        <div class='post-link'>
+          <a href='/2011/08/13/mtpz-syncing-mac-count-hash.html'>
+            <small class='date'>13 Aug 2011</small>
+            MTPZ: Syncing - MAC Count Hash
+          </a>
+        </div>
+        
+        <div class='post-link'>
+          <a href='/2011/08/11/mtpz-handshake-part-3-confirmation-message.html'>
+            <small class='date'>11 Aug 2011</small>
+            MTPZ: Handshake, Part 3 - Confirmation Message
+          </a>
+        </div>
+        
+        <div class='post-link'>
+          <a href='/2011/08/09/mtpz-handshake-part-2-validate-handshake-response.html'>
+            <small class='date'>09 Aug 2011</small>
+            MTPZ: Handshake, Part 2 - Validate Handshake Response
+          </a>
+        </div>
+        
+        <div class='post-link'>
+          <a href='/2011/07/06/mtpz-handshake-part-1-application-certificate-message.html'>
+            <small class='date'>06 Jul 2011</small>
+            MTPZ: Handshake, Part 1 - Application Certificate Message
+          </a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    
+    <div class='container' id='content'>
+      <div class='row'>
+  <div class='span12'>
+    <h1>Latest post</h1>
+    
+    
+    <h1 class='title'>
+      <a href='/2012/02/13/mtpz-implementation.html'>MTPZ: Implementation</a>
+    </h1>
+    <span class='date'>
+      13 Feb 2012
+    </span>
+    
+    <span class='tag'>
+      - <a href="http://localhost:4000/blog.html?tag=zune">zune</a>
+    </span>
+    
+    <span class='tag'>
+      - <a href="http://localhost:4000/blog.html?tag=mtpz">mtpz</a>
+    </span>
+    
+    <p>Oh gosh, when did it become February? It’s been quite a while, but I blame school! Anyhow, it might be a good idea
+to give an update on my progress of implementing the Zune functionality onto the libmtp project.</p>
+
+<h2 id="source-code-release">Source code release</h2>
+
+<p>I have released the source code of the MTPZ implementation in my new GitHub repository, <a href="https://github.com/kbhomes/libmtp-zune" title="kbhomes's libmtp-zune repository">libmtp-zune</a>. This is a 
+fork of the official <a href="http://sourceforge.net/projects/libmtp" title="Official libmtp repository">libmtp repository</a> hosted on SourceForge, with my changes on top. Keep in mind that my repository
+may not be stable and thus it should only be installed by the adventurous. For the rest, I’m working on cleaning up
+my code so that it can be merged into the libmtp project.</p>
+
+<p>I’ve included in my repository a file named <a href="https://github.com/kbhomes/libmtp-zune/blob/master/mtpz.md" title="Synoptic outline of the handshake process">mtpz.md</a>, a short synoptic outline of the handshake process. As well,
+this file discloses the structure of the certificate data and the RSA keys used in the handshake. Bear in mind that
+not all of the information about the structure of the certificate data is known to me — I did not pursue those bits
+further as they were not relevant to the handshake process.</p>
+
+<h2 id="using-the-mtpz-functionality">Using the MTPZ functionality</h2>
+
+<p>The way that MTPZ is incorporated into the libmtp library is to call functions that complete the handshake process when 
+an appropriate device is detected. When a device is to be opened by the library, it is checked if it contains the 
+<code>microsoft.com/MTPZ</code> vendor extension. If the device is found to be an MTPZ device, the library performs the handshake 
+and then continues normally.</p>
+
+<p>When running the <code>configure</code> script, there is now the <code>--disable-mtpz</code> flag which, if present, will not build the MTPZ
+functionality. By default, MTPZ is included. Once the project is built and installed, the command line examples can
+be used to manipulate the device. For example, to download tracks from the device, use the <code>mtp-getfile</code> program. Similarly,
+<code>mtp-sendtr</code> can be used to upload songs to the device.</p>
+
+<p>There are some issues regarding the MTPZ functionality being backwards compatible with existent software which are being
+looked into. For example, Banshee and Rhythmbox do not yet properly interface with my Zune. I have, however, found that 
+<a href="http://gmtp.sourceforge.net/" title="gMTP: open source MTP client">gMTP</a> does properly interface with my device, once compiled from source so that it links with my changes to libmtp.
+Again, these compatibility issues are being investigated.</p>
+
+<h2 id="were-not-done-just-yet">We’re not done just yet</h2>
+
+<p>While this code represents very good progress on the implementation front, we still have work to do in order to finalize
+this project:</p>
+
+<ul>
+  <li>
+    <p><strong>Separate the certificate data and RSA key data from the library.</strong>
+The certificate data can be extracted byte-for-byte from any MTPZ handshake session. The RSA key data, however, must
+be reverse engineered from official software. As such, it is best that these pieces of data remain separate from the 
+project and be obtained by the end-user to be stored in their home directories for libmtp to read.</p>
+  </li>
+  <li>
+    <p><strong>Investigate backward compatibility issues.</strong>
+As mentioned previously, some existent software have issues in properly interfacing with MTPZ devices using this new
+MTPZ functionality. In order for this library to be most effective, the MTPZ functionality should ideally work out of 
+the box with any pre-existing software.</p>
+  </li>
+  <li>
+    <p><strong>Merge MTPZ functionality into libmtp.</strong>
+The final milestone of the project is to incorporate this MTPZ research and code into the official libmtp codebase.
+Doing so will result in MTPZ functionality being easily installable and potentially even be installed out of the box
+in some systems.</p>
+  </li>
+</ul>
+
+<p>With that, I get back to working on this. More updates will be posted on this blog, but also be sure to watch my GitHub
+repository as well as the <a href="http://sourceforge.net/mailarchive/forum.php?forum_name=libmtp-discuss" title="libmtp mailing list">mailing list for libmtp</a>.</p>
+
+
+    
+  </div>
+</div>
+
+    </div>
+    <div id='footer'>
+      <div class='footer-inside container'>
+        <div class='row'>
+          <div class='span6'>
+            <span class='footer-header'>about</span>
+            <p>Copyright &copy; 2017 Sajid Anwar</p>
+          </div>
+          <div class='span6'>
+            <span class='footer-header'>contact</span>
+            <a href='https://github.com/kbhomes/'>GitHub repositories</a>
+            <br>
+            <span id='email'>
+              <a href='' onclick='toggleEmail(); return false;'>Email</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
