@@ -1,12 +1,21 @@
 <div class='container'>
   <div class='row'>
-    <div class='span4 section about-me'>
+    <div class='span5 section about-me'>
       <h1>about me</h1>
+      <div class='media'>
+        <div class='pull-right'>
+        </div>
+        <div class='media-body about-text'>
+          I am a Computer Science master's student at the Georgia Institute of Technology,
+          focusing on computational perception and robotics. I obtained my bachelor's degree
+          in Computer Science from Arizona State University in 2016.
+        </div>
+      </div>
     </div>
-    <div class='span4 section recent-projects'>
-      <h1>recent projects</h1>
+    <div class='span2 section'>
+      <img class='profile media-object' src="https://avatars3.githubusercontent.com/u/479569?v=3&s=100">
     </div>
-    <div class='span4 section recent-posts'>
+    <div class='span5 section recent-posts'>
       <h1>recent posts</h1>
       <div class='content'>
         {% for post in site.posts limit:5 %}

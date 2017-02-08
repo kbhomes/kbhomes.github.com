@@ -8,7 +8,7 @@ body {
   background-color: #FDFDFD; }
 
 a:hover {
-  color: #f21d41; }
+  color: #F21D41; }
 
 #header {
   position: fixed;
@@ -45,7 +45,14 @@ a:hover {
           font-size: 14pt;
           color: #c0c0c0; }
           #header #menu ul li a:hover, #header #menu ul li a.active {
-            color: #f21d41; }
+            color: #F21D41; }
+
+#banner img.profile {
+  border: 5px solid white;
+  border-radius: 100%;
+  box-shadow: 0px 0px 0px 2px grey;
+  margin-top: 25%;
+  margin-left: 12.5%; }
 
 #content {
   min-height: 300px;
@@ -108,7 +115,7 @@ span.secret {
       color: #666;
       text-decoration: none; }
       #banner .section.recent-posts .post-link a:hover {
-        color: #f21d41; }
+        color: #F21D41; }
 
 /*
 
@@ -226,7 +233,7 @@ span.project_subtitle {
   padding-left: 10px; }
 
 .highlight .c {
-  color: #71946b; }
+  color: #71946B; }
 
 /* Comment */
 .highlight .err {
@@ -255,19 +262,19 @@ span.project_subtitle {
 
 /* Punctuation */
 .highlight .cm {
-  color: #71946b; }
+  color: #71946B; }
 
 /* Comment.Multiline */
 .highlight .cp {
-  color: #71946b; }
+  color: #71946B; }
 
 /* Comment.Preproc */
 .highlight .c1 {
-  color: #71946b; }
+  color: #71946B; }
 
 /* Comment.Single */
 .highlight .cs {
-  color: #71946b; }
+  color: #71946B; }
 
 /* Comment.Special */
 .highlight .ge {
@@ -465,3 +472,5 @@ ul.contacts li {
   list-style: none;
   height: 40px;
   line-height: 40px; }
+
+/*# sourceMappingURL=main.css.map */

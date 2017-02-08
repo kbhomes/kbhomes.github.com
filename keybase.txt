@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/sajidanwar
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://sajidanwar.me
+  * I am sajidanwar (https://keybase.io/sajidanwar) on keybase.
+  * I have a public key ASDXgbcWbqo8eM288KGKpraL-ZFCw2y3gdjTl9EzYmWe2wo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01018849708626893e4eedc96be69904d3c2b4f0e50b2de96ef0ed1154a712f493570a",
+            "host": "keybase.io",
+            "kid": "0120d781b7166eaa3c78cdbcf0a18aa6b68bf99142c36cb781d8d397d13362659edb0a",
+            "uid": "68c1afc2925153145a5d80f675ae5b19",
+            "username": "sajidanwar"
+        },
+        "service": {
+            "hostname": "sajidanwar.me",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.18"
+    },
+    "ctime": 1486585741,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1486585735,
+        "hash": "20b3048692c57271070f4d68f74fd13bd5b923e46a2179f8b3c0488cb86b26fae3d16ab01741828eea8902f6a72bb932866e0d9e118c3ff594b71be27b4f980e",
+        "seqno": 845347
+    },
+    "prev": "9e6a41d489de3b3cae3c8f08f00aaff5605d2407ab2cf3819f428ff558ba5afe",
+    "seqno": 18,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg14G3Fm6qPHjNvPChiqa2i/mRQsNst4HY05fRM2JlntsKp3BheWxvYWTFAvd7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxODg0OTcwODYyNjg5M2U0ZWVkYzk2YmU2OTkwNGQzYzJiNGYwZTUwYjJkZTk2ZWYwZWQxMTU0YTcxMmY0OTM1NzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwZDc4MWI3MTY2ZWFhM2M3OGNkYmNmMGExOGFhNmI2OGJmOTkxNDJjMzZjYjc4MWQ4ZDM5N2QxMzM2MjY1OWVkYjBhIiwidWlkIjoiNjhjMWFmYzI5MjUxNTMxNDVhNWQ4MGY2NzVhZTViMTkiLCJ1c2VybmFtZSI6InNhamlkYW53YXIifSwic2VydmljZSI6eyJob3N0bmFtZSI6InNhamlkYW53YXIubWUiLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjE4In0sImN0aW1lIjoxNDg2NTg1NzQxLCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0ODY1ODU3MzUsImhhc2giOiIyMGIzMDQ4NjkyYzU3MjcxMDcwZjRkNjhmNzRmZDEzYmQ1YjkyM2U0NmEyMTc5ZjhiM2MwNDg4Y2I4NmIyNmZhZTNkMTZhYjAxNzQxODI4ZWVhODkwMmY2YTcyYmI5MzI4NjZlMGQ5ZTExOGMzZmY1OTRiNzFiZTI3YjRmOTgwZSIsInNlcW5vIjo4NDUzNDd9LCJwcmV2IjoiOWU2YTQxZDQ4OWRlM2IzY2FlM2M4ZjA4ZjAwYWFmZjU2MDVkMjQwN2FiMmNmMzgxOWY0MjhmZjU1OGJhNWFmZSIsInNlcW5vIjoxOCwidGFnIjoic2lnbmF0dXJlIn2jc2lnxEDR9YvvUn5bYOm0WSzJdWUdvnIDPNxrIsh7pYc24NnFgaAk+ytaqDyhitS1JM8AUdTa3/JLDfG60IeTqgi3rLAHqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgcgVnOU1xAX3i2lu+8fGuzo2urGHcmfG+Iga2vvPOwwqjdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/sajidanwar
+
+==================================================================
